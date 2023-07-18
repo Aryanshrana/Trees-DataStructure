@@ -32,6 +32,13 @@ some points: -
   in perfect binary tree of height h, total number of nodes is 2^(h+1) - 1 .
   if n is no of leaves nodes then it has log(n) + 1 levels atleast .
   in strict binary tree, if n is no. of leaf nodes then we have n -1 internal nodes.
-  
+
+#Implementation
+  Two implementation;- linked implementation and sequential implementation.
+  here we are proceeding with linked implementation.
+
+  1. In insert function -> first it is checking the insert for left then insert for right.
+
+
   
   
