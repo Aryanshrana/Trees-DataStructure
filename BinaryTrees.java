@@ -67,7 +67,7 @@ public class BinaryTrees {
         if (node == null) {
             return;
         }
-        System.out.println(node.value + "--->");
+        System.out.print(node.value + "--->");
         preOrderTraversal(node.left);
         preOrderTraversal(node.right);
     }
@@ -81,7 +81,7 @@ public class BinaryTrees {
             return;
         }
         inOrderTraversal(node.left);
-        System.out.println(node.value + "--->");
+        System.out.print(node.value + "--->");
         inOrderTraversal(node.right);
     }
 
@@ -95,7 +95,7 @@ public class BinaryTrees {
         }
         postOrderTraversal(node.left);
         postOrderTraversal(node.right);
-        System.out.println(node.value + "--->");
+        System.out.print(node.value + "--->");
     }
 
     public static void main(String[] args) {
@@ -103,8 +103,11 @@ public class BinaryTrees {
         BinaryTrees tree = new BinaryTrees();
         tree.populate(scanner);
         tree.display();
+        System.out.println("preorder traversal");
         tree.preOrderTraversal();
+        System.out.println("inorder traversal");
         tree.inOrderTraversal();
+        System.out.println("postorder traversal");
         tree.postOrderTraversal();
 
     }
