@@ -44,6 +44,21 @@ public class BST {
         }
     }
 
+    public void populatesortedArray(int[] nums1) {
+        populatesortedArray(nums1, 0, nums1.length);
+    }
+
+    private void populatesortedArray(int[] nums1, int start, int end) {
+        if (start >= end) {
+            return;
+        }
+        int mid = (start + end) / 2;
+        this.insert(nums1[mid]);
+        populatesortedArray(nums1, start, mid);
+        populatesortedArray(nums1, mid + 1, end);
+
+    }
+
     public void insert(int value) {
         root = insert(value, root);
     }
@@ -64,7 +79,7 @@ public class BST {
     }
 
     public void isBalanced() {
-        isBalanced(root);
+        System.out.println(isBalanced(root));
     }
 
     private boolean isBalanced(Node node) {
@@ -75,7 +90,7 @@ public class BST {
     }
 
     public void display() {
-        display(root, "Root node");
+        display(root, "Root node is: ");
     }
 
     private void display(Node node, String details) {
@@ -83,8 +98,8 @@ public class BST {
             return;
         }
         System.out.println(details + node.getValue());
-        display(node.left, "left node of: " + node.getValue() + "\t");
-        display(node.right, "right node of: " + node.getValue() + "\t");
+        display(node.left, "left child of: " + node.getValue() + ":");
+        display(node.right, "right child of: " + node.getValue() + ":");
     }
 
     public static void main(String[] args) {
@@ -93,7 +108,9 @@ public class BST {
         int[] nums = { 15, 12, 20, 8, 13, 17, 24, 7, 18, 19 };
         bst.populate(nums);
         bst.display();
-        bst.isBalanced();
+        int[] nums1 = { 7, 8, 12, 13, 15, 17, 18, 19, 20, 24 };
+        bst.populatesortedArray(nums1);
+        bst.display();
 
         // System.out.println(bst.height(root));
     }

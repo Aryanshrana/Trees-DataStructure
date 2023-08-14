@@ -39,6 +39,12 @@ some points: -
 
   1. In insert function -> first it is checking the insert for left then insert for right.
 
+Traversal
+  pre order traversal(root, left, right) -> used for evaluating a expression or making a copy, serialization from array/string
+  in order travseral(left,root,right) -> (if in BST you apply , you access the nodes in sorted manner)
+  post-order traversal(left right,root) -> (delete the b.tree use post order),(or performing bottom up calculation)
+  
+
 
   
   
