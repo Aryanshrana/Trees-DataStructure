@@ -59,15 +59,43 @@ public class BinaryTrees {
         display(node.right, indent + "\t");
     }
 
-    public void prettydisplay() {
-        prettydisplay(this.root, 0);
+    public void preOrderTraversal() {
+        preOrderTraversal(root);
     }
 
-    private void prettydisplay(Node node, int count) {
+    private void preOrderTraversal(Node node) {
         if (node == null) {
             return;
         }
+        System.out.println(node.value + "--->");
+        preOrderTraversal(node.left);
+        preOrderTraversal(node.right);
+    }
 
+    public void inOrderTraversal() {
+        inOrderTraversal(root);
+    }
+
+    private void inOrderTraversal(Node node) {
+        if (node == null) {
+            return;
+        }
+        inOrderTraversal(node.left);
+        System.out.println(node.value + "--->");
+        inOrderTraversal(node.right);
+    }
+
+    public void postOrderTraversal() {
+        postOrderTraversal(root);
+    }
+
+    private void postOrderTraversal(Node node) {
+        if (node == null) {
+            return;
+        }
+        postOrderTraversal(node.left);
+        postOrderTraversal(node.right);
+        System.out.println(node.value + "--->");
     }
 
     public static void main(String[] args) {
@@ -75,7 +103,9 @@ public class BinaryTrees {
         BinaryTrees tree = new BinaryTrees();
         tree.populate(scanner);
         tree.display();
-        tree.prettydisplay();
+        tree.preOrderTraversal();
+        tree.inOrderTraversal();
+        tree.postOrderTraversal();
 
     }
 
